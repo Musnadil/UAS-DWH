@@ -10,9 +10,9 @@
         android:id="@+id/imageView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:src="@drawable/bg"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
+        android:src="@drawable/bg"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,106 +20,113 @@
 
     <TextView
         android:id="@+id/tvprediksi"
-        android:textAllCaps="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="130dp"
         android:text="Prediksi Penjualan"
+        android:textAllCaps="true"
         android:textColor="@color/black"
         android:textSize="20dp"
         android:textStyle="bold"
-        android:layout_marginTop="130dp"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:gravity="center"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        >
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Tanggal"
             android:textColor="@color/black"
-            android:textSize="15dp"
-            />
+            android:textSize="15dp" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:gravity="center"
-            android:layout_marginBottom="30dp"
-            >
+            android:orientation="horizontal">
+
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_calendar"
-                />
+                android:src="@drawable/ic_calendar" />
+
             <EditText
                 android:id="@+id/etDay"
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
-                android:hint="dd"
                 android:gravity="center"
-                android:textColor="@color/black"
+                android:hint="dd"
                 android:imeOptions="actionNext"
-                android:maxLines="1"
                 android:inputType="number"
                 android:maxLength="2"
-                />
+                android:maxLines="1"
+                android:textColor="@color/black" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="/"
-                />
+                android:text="/" />
 
             <EditText
                 android:id="@+id/etMonth"
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
-                android:hint="mm"
                 android:gravity="center"
-                android:textColor="@color/black"
+                android:hint="mm"
                 android:imeOptions="actionNext"
-                android:maxLines="1"
                 android:inputType="number"
                 android:maxLength="2"
+                android:maxLines="1"
+                android:textColor="@color/black"
 
                 />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="/"
-                />
+                android:text="/" />
+
             <EditText
                 android:id="@+id/etYear"
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"
-                android:hint="yyyy"
                 android:gravity="center"
-                android:textColor="@color/black"
+                android:hint="yyyy"
                 android:imeOptions="actionDone"
-                android:maxLines="1"
                 android:inputType="number"
                 android:maxLength="4"
+                android:maxLines="1"
+                android:textColor="@color/black"
 
                 />
 
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvError"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="error message"
+            android:textColor="@color/red" />
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnPrediksi"
             android:layout_width="180dp"
             android:layout_height="50dp"
-            android:text="Prediksikan"
+            android:layout_marginTop="30dp"
             android:backgroundTint="#3398E8"
-            app:cornerRadius="20dp"
-            />
+            android:text="Prediksikan"
+            app:cornerRadius="20dp" />
 
     </LinearLayout>
 

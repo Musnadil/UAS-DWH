@@ -21,23 +21,30 @@ class MainActivity : AppCompatActivity() {
         etDay.text = null
         etMonth.text = null
         etYear.text = null
+        etDay.requestFocus()
+        tvError.text = null
         super.onStart()
     }
     fun prediksi(){
         btnPrediksi.setOnClickListener {
             if(etDay.text.toString().isEmpty()){
-                etDay.error = "Tanggal tidak boleh kosong"
+                tvError.text = "Tanggal tidak boleh kosong"
             }else if(etMonth.text.toString().isEmpty()){
-                etMonth.error = "Bulan tidak boleh kosong"
+                tvError.text = "Bulan tidak boleh kosong"
             }else if (etYear.text.toString().isEmpty()){
-                etYear.error = "Tahun tidak boleh kosong"
+                tvError.text = "Tahun tidak boleh kosong"
             }else if(etYear.text.toString().length <4){
-                etYear.error = "Tahun diisi dengan 4 angka"
+                tvError.text = "Tahun diisi dengan 4 angka"
             }else if(etYear.text.toString().toInt()<=2003 || etYear.text.toString().toInt()>=2040){
-                etYear.error = "Prediksi tidak terjangkau"
+                tvError.text = "Prediksi tidak terjangkau"
+            }else if(etDay.text.toString().toInt()==0 ||etDay.text.toString().toInt()>31 ){
+                tvError.text = "Prediksi tidak terjangkau"
+            }else if(etMonth.text.toString().toInt()==0 || etMonth.text.toString().toInt()>12){
+                tvError.text = "Prediksi tidak terjangkau"
             }
             else{
-            perhitungan()
+                tvError.text = null
+                perhitungan()
             }
         }
     }
