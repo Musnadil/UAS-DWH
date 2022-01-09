@@ -1,6 +1,7 @@
 package com.musnadil.dwh.Activities
 
 import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.musnadil.dwh.R
@@ -29,18 +30,29 @@ class MainActivity : AppCompatActivity() {
         btnPrediksi.setOnClickListener {
             if(etDay.text.toString().isEmpty()){
                 tvError.text = "Tanggal tidak boleh kosong"
+                etDay.requestFocus()
             }else if(etMonth.text.toString().isEmpty()){
                 tvError.text = "Bulan tidak boleh kosong"
+                etMonth.requestFocus()
             }else if (etYear.text.toString().isEmpty()){
                 tvError.text = "Tahun tidak boleh kosong"
+                etYear.requestFocus()
             }else if(etYear.text.toString().length <4){
                 tvError.text = "Tahun diisi dengan 4 angka"
+                etYear.requestFocus()
+                etYear.text = null
             }else if(etYear.text.toString().toInt()<=2003 || etYear.text.toString().toInt()>=2040){
                 tvError.text = "Prediksi tidak terjangkau"
+                etYear.requestFocus()
+                etYear.text = null
             }else if(etDay.text.toString().toInt()==0 ||etDay.text.toString().toInt()>31 ){
                 tvError.text = "Prediksi tidak terjangkau"
+                etDay.requestFocus()
+                etDay.text=null
             }else if(etMonth.text.toString().toInt()==0 || etMonth.text.toString().toInt()>12){
                 tvError.text = "Prediksi tidak terjangkau"
+                etMonth.requestFocus()
+                etMonth.text = null
             }
             else{
                 tvError.text = null
